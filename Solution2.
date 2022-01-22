@@ -1,0 +1,27 @@
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+		int M = sc.nextInt();
+		int b= 2;
+		while(BaseConv(M,b)!=true){
+		    b=b+1;
+		}
+		System.out.println(b);
+	}
+	
+	public static boolean BaseConv(int M, int b){
+	    int ans=0, mul=1, rem=0;
+	    while(M!=0){
+	        rem = M%b;
+	        ans = ans+rem*mul;
+	        mul=mul*10;
+	        M=M/b;
+	    }
+	    if(M==rem){
+	        return true;
+	    }
+	    return false;
+	}
+}
